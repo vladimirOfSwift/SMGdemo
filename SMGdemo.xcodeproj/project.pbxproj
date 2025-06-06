@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		85C44C002DF1C4B3001E418F /* SMGdemo */ = {
+		85C44C432DF1DD83001E418F /* SMGdemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SMGdemo;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		85C44BF52DF1C4B3001E418F = {
 			isa = PBXGroup;
 			children = (
-				85C44C002DF1C4B3001E418F /* SMGdemo */,
+				85C44C432DF1DD83001E418F /* SMGdemo */,
 				85C44BFF2DF1C4B3001E418F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				85C44C002DF1C4B3001E418F /* SMGdemo */,
+				85C44C432DF1DD83001E418F /* SMGdemo */,
 			);
 			name = SMGdemo;
 			packageProductDependencies = (
