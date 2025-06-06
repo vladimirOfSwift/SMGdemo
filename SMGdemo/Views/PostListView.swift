@@ -1,5 +1,5 @@
 //
-//  PostListViewModel.swift
+//  PostListView.swift
 //  SMGdemo
 //
 //  Created by Vladimir Savic on 5. 6. 2025..
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostListViewModel: View {
+struct PostListView: View {
     @StateObject private var viewModel = PostListsViewModel()
     
     var body: some View {
@@ -46,4 +46,8 @@ struct PostListViewModel: View {
             await viewModel.loadPosts()
         }
     }
+}
+
+#Preview {
+    PostListView()
 }
