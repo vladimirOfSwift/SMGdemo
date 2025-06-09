@@ -36,7 +36,13 @@ struct PostListView: View {
             .navigationTitle("Posts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: CreatePostView()) {
+                    NavigationLink(
+                        destination: CreatePostView { newPost in
+                            Task { @MainActor in
+                                viewModel.addPost(newPost)
+                            }
+                        }
+                    ){
                         Image(systemName: "plus")
                     }
                 }
