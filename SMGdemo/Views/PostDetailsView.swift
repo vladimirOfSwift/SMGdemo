@@ -26,7 +26,7 @@ struct PostDetailsView: View {
                     AsyncImage(url: URL(string: "https://picsum.photos/600/200")) { image in
                         image
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                     } placeholder: {
                         Color.gray.frame(height: 200)
                     }
