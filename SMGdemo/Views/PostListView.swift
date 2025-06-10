@@ -60,6 +60,6 @@ struct PostListView: View {
     }
 }
 
-//#Preview {
-//    PostListView()
-//}
+#Preview {
+    PostListView()
+}

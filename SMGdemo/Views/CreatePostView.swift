@@ -55,7 +55,7 @@ struct CreatePostView: View {
         .overlay(
             Group {
                 if showSuccessToast {
-                    Text("Post has been submitted and saved temporarily on your iPhone.")
+                    Text(Constants.shared.successfulMessage)
                         .padding()
                         .background(Color.green.opacity(0.8))
                         .foregroundColor(.white)
@@ -69,6 +69,6 @@ struct CreatePostView: View {
     }
 }
 
-//#Preview {
-//    CreatePostView()
-//}
+#Preview {
+    CreatePostView()
+}

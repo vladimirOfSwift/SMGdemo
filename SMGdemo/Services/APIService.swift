@@ -11,7 +11,7 @@ class APIService {
     static let shared = APIService()
     private init() {}
     
-    private let baseURL = "https://jsonplaceholder.typicode.com"
+    private let baseURL = Constants.shared.baseUrl
     
     func fetchPosts() async throws -> [Post] {
         guard let url = URL(string: "\(baseURL)/posts") else {

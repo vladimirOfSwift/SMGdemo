@@ -13,8 +13,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		85C44C432DF1DD83001E418F /* SMGdemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = SMGdemo;
 			sourceTree = "<group>";
 		};

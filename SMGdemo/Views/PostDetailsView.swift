@@ -23,7 +23,7 @@ struct PostDetailsView: View {
                 } else if let error = errorMessage {
                     Text(error).foregroundColor(.red)
                 } else if let post = post {
-                    AsyncImage(url: URL(string: "https://picsum.photos/600/200")) { image in
+                    AsyncImage(url: URL(string: Constants.shared.imagesUrl)) { image in
                         image
                             .resizable()
                             .scaledToFill()
