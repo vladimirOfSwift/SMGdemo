@@ -8,4 +8,4 @@ xcuserdata/
 *.xcodeproj/xcuserdata
 
 # macOS
-.DS_Store
+.DS_StorePods/

@@ -12,48 +12,54 @@ struct PostListView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                if viewModel.isLoading {
-                    ProgressView("Loading...")
-                } else if let error = viewModel.errorMessage {
-                    Text(error).foregroundColor(.red)
-                } else {
-                    List(viewModel.posts, id: \.id) { post in
-                        NavigationLink(destination: PostDetailsView(postId: post.id)) {
-                            VStack(alignment: .leading) {
-                                Text(post.title)
-                                    .font(.headline)
-                                Text(post.body)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(2)
+            content
+                .navigationTitle("Posts")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(
+                            destination: CreatePostView { newPost in
+                                Task { @MainActor in
+                                    viewModel.addPost(newPost)
+                                }
                             }
-                            .padding(.vertical, 4)
+                        ) {
+                            Image(systemName: "plus")
                         }
                     }
                 }
-            }
-            .navigationTitle("Posts")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(
-                        destination: CreatePostView { newPost in
-                            Task { @MainActor in
-                                viewModel.addPost(newPost)
-                            }
-                        }
-                    ){
-                        Image(systemName: "plus")
-                    }
-                }
-            }
         }
         .task {
             await viewModel.loadPosts()
         }
     }
+    
+    @ViewBuilder
+    private var content: some View {
+        if viewModel.isLoading {
+            ProgressView("Loading...")
+        } else if let error = viewModel.errorMessage {
+            Text(error).foregroundColor(.red)
+        } else {
+            List {
+                ForEach(viewModel.posts, id: \.id) { post in
+                    NavigationLink(destination: PostDetailsView(postId: post.id)) {
+                        VStack(alignment: .leading) {
+                            Text(post.title)
+                                .font(.headline)
+                            Text(post.body)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .lineLimit(2)
+                        }
+                        .padding(.vertical, 4)
+                    }
+                }
+                .onDelete(perform: viewModel.deletePost)
+            }
+        }
+    }
 }
 
-#Preview {
-    PostListView()
-}
+//#Preview {
+//    PostListView()
+//}

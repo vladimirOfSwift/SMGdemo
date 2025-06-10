@@ -13,6 +13,8 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		85C44C432DF1DD83001E418F /* SMGdemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = SMGdemo;
 			sourceTree = "<group>";
 		};
@@ -34,6 +36,7 @@
 			children = (
 				85C44C432DF1DD83001E418F /* SMGdemo */,
 				85C44BFF2DF1C4B3001E418F /* Products */,
+				AFA26130019C4436A3D7A8C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +46,13 @@
 				85C44BFE2DF1C4B3001E418F /* SMGdemo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AFA26130019C4436A3D7A8C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -64,8 +74,6 @@
 				85C44C432DF1DD83001E418F /* SMGdemo */,
 			);
 			name = SMGdemo;
-			packageProductDependencies = (
-			);
 			productName = SMGdemo;
 			productReference = 85C44BFE2DF1C4B3001E418F /* SMGdemo.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +262,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SMGdemo/Preview Content\"";
 				DEVELOPMENT_TEAM = MG7RVDKYK5;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -283,6 +292,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SMGdemo/Preview Content\"";
 				DEVELOPMENT_TEAM = MG7RVDKYK5;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

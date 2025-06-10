@@ -32,4 +32,8 @@ class PostListsViewModel: ObservableObject {
     func addPost(_ post: Post) {
         posts.insert(post, at: 0)
     }
+    
+    func deletePost(at offsets: IndexSet) {
+        posts.remove(atOffsets: offsets)
+    }
 }
