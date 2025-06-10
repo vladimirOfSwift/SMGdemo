@@ -72,7 +72,7 @@ struct PostDetailsView: View {
             (post, comments) = try await (fetchedPost, fetchedComments)
             isLoading = false
         } catch {
-            errorMessage = "Failed to load data: \(error.localizedDescription)"
+            errorMessage = "Failed to load data: \(error.localizedDescription) The data was not saved on the server."
             isLoading = false
         }
     }
