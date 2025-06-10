@@ -67,7 +67,13 @@ The app uses JSONPlaceholder's free fake API:
 3. Build and run on your preferred simulator or device
 
 ## Screenshots
-(You may want to add screenshots of the main views here)
+<img width="369" alt="Screenshot 2025-06-10 at 12 05 32" src="https://github.com/user-attachments/assets/015c2eda-4d6d-4775-8be1-34497f195ef1" />
+
+<img width="374" alt="Screenshot 2025-06-10 at 12 06 19" src="https://github.com/user-attachments/assets/0858b79b-1039-403f-b566-e6a1e15d59e5" />
+
+<img width="374" alt="Screenshot 2025-06-10 at 12 06 42" src="https://github.com/user-attachments/assets/e50cae18-a111-499c-a259-d7cb82eb6b79" />
+
+<img width="372" alt="Screenshot 2025-06-10 at 12 06 58" src="https://github.com/user-attachments/assets/67540c5f-0531-47a0-91f5-78c944f27d23" />
 
 ## Author
 Vladimir Savic
