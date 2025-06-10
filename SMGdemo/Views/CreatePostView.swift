@@ -12,6 +12,7 @@ struct CreatePostView: View {
     @ObservedObject var viewModel = CreatePostViewModel()
     
     var onPostCreated: ((Post) -> Void)?
+    @State private var showSuccessToast = false
     
     var body: some View {
         NavigationView {
@@ -34,7 +35,10 @@ struct CreatePostView: View {
                     Task {
                         if let post = await viewModel.createPost() {
                             onPostCreated?(post)
-                            dismiss()
+                            showSuccessToast = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                dismiss()
+                            }
                         }
                     }
                 }) {
@@ -48,6 +52,20 @@ struct CreatePostView: View {
             }
             .navigationTitle("Create Post")
         }
+        .overlay(
+            Group {
+                if showSuccessToast {
+                    Text("Post has been submitted and saved temporarily on your iPhone.")
+                        .padding()
+                        .background(Color.green.opacity(0.8))
+                        .foregroundColor(.white)
+                        .cornerRadius(24)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                        .animation(.easeInOut,  value: showSuccessToast)
+                }
+            },
+            alignment: .bottom
+        )
     }
 }
 
